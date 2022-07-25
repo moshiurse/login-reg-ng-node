@@ -1,27 +1,23 @@
+
+
 <div class="container">
-    <div class="titles-and-sologan">
-        <h1>WELCOME BACK</h1>
-        <p>Join the world's largest community</p>
-    </div>
-    <div class="recent-accounts-list">
-      <p>RECENT LOGINS</p>  
-      <div class="recent-login-accounts">
-        <div class="recent-account">
-         <img src="../assets/remove.png" alt=""  width="16px"  height="16px">
-         <div class="user-image">
-            <img src="../assets/alex.jpg" alt="" width="50px" height="50px" style="border-radius: 50%; object-fit:cover">
-         </div>
-         <img src="../assets/more.png" alt="" width="15px" height="15px">
-       
-        </div>
-        <div class="recent-account">
+   <mat-card>
+    <mat-toolbar color="primary">Login</mat-toolbar>
+    <form action="">
+        <form class="login-form">
+            <mat-form-field >
+              <mat-label>User Name</mat-label>
+              <input matInput placeholder="Place Your Name">
+            </mat-form-field>
+          
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput type="password" placeholder="Place Your Correct Password">
+            </mat-form-field>
+            <button mat-raised-button type="submit">Login</button>
+          </form>
+          
+    </form>
+   </mat-card>
 
-        </div>
-        <div class="recent-account">
-
-        </div>
-        
-      </div>
-       
-    </div>
 </div>
