@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login-form',
@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class LoginFormComponent implements OnInit {
 
   constructor() { }
-
+@Output() changeRegistrationValueEvent =  new EventEmitter<boolean>();  
   ngOnInit(): void {
+  
   }
 
+  goToRegisterComponent(){
+    console.log("hello");
+    let newRegiterFormValue = true;
+    this.changeRegistrationValueEvent.emit(newRegiterFormValue);
+  }
+
+
+ 
 }

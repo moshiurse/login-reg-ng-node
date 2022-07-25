@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  loginFormOpen = false;
+  registerFormOpen= true;
+
+  changeLoginValue(data:any){
+    this.loginFormOpen = data;
+    this.registerFormOpen = false;
+  }
+  changeRegisterFormValue(data:any){
+  this.registerFormOpen = data;
+   this.loginFormOpen = false;
+   
+  }
+
 }
+
