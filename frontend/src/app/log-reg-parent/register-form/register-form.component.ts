@@ -8,13 +8,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class RegisterFormComponent implements OnInit {
 
   constructor() { }
-  @Output() changeLoginValueEvent = new EventEmitter<boolean>(); 
+  @Output() changeLoginValueEvent = new EventEmitter<any>(); 
   ngOnInit(): void {
   }
 
 
   changeLoginFormValue(){
        let newLoginValue = true;
+      
        this.changeLoginValueEvent.emit(newLoginValue);
   }
 }

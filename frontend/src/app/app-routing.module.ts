@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
+import { LogRegParentComponent } from './log-reg-parent/log-reg-parent.component';
+import {WelcomePageComponent} from './welcome-page/welcome-page.component'
+
 
 const routes: Routes = [
-  // {
-  //   path:'', component: LoginFormComponent
-  // },
-  // {
-  //   path: 'register', component: RegisterFormComponent
-  // }
+  {
+    path:'', component: LogRegParentComponent
+  },
+  {
+    path: 'welcome', component: WelcomePageComponent
+  }
+  
 ];
 
 @NgModule({
