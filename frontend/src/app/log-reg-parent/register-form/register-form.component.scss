@@ -1,0 +1,31 @@
+.container{
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container mat-card{
+    width: 25%;
+    padding: 0px;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+}
+.register-and-forget-link{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.register-and-forget-link a{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

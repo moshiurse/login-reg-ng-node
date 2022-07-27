@@ -1,0 +1,3 @@
+<app-login-form *ngIf="loginFormOpen"  (changeRegistrationValueEvent)="changeRegisterFormValue($event)"></app-login-form>
+
+<app-register-form *ngIf="registerFormOpen" (changeLoginValueEvent)="changeLoginValue($event)"></app-register-form>

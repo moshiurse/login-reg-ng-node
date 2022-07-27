@@ -1,0 +1,23 @@
+<div class="container">
+    <mat-card>
+        <mat-toolbar color="primary">Login</mat-toolbar>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="dataMatching()">
+
+            <mat-form-field>
+                <mat-label>User Name</mat-label>
+                <input formControlName="userName"  matInput placeholder="Place Your Name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="passward"  type="password" placeholder="Place Your Correct Password">
+            </mat-form-field>
+            <button mat-raised-button type="submit">Login</button>
+            <div class="register-and-forget-link">
+                <a (click)="goToRegisterComponent()">Creat New Account</a>
+                <a>Forget Password?</a>
+            </div>
+
+        </form>
+    </mat-card>
+</div>
