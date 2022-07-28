@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
@@ -7,12 +8,36 @@ import { LoginServiceService } from '../services/login-service.service';
   styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
-  
-  constructor(public loginService: LoginServiceService) { }
+  public authenticUser: any;
+
+  constructor(public loginService: LoginServiceService, private router: Router) { }
 
   ngOnInit(): void {
-  }
-  authenticUser = this.loginService.authenticuser;
+    if (!localStorage.getItem('user')) {
+      this.router.navigate(['']);
+      this.loginService.loginValue = true;
 
+    }
+    else {
+
+
+
+      this.authenticUser = localStorage.getItem('user')
+      this.authenticUser = JSON.parse(this.authenticUser);
+    }
+
+
+
+
+
+  }
+
+
+  logOut() {
+
+    localStorage.removeItem('user');
+    this.router.navigate(['']);
+    this.loginService.loginValue = true;
+  }
 
 }

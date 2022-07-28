@@ -12,7 +12,14 @@
                 <mat-label>Password</mat-label>
                 <input matInput formControlName="passward"  type="password" placeholder="Place Your Correct Password">
             </mat-form-field>
+            
             <button mat-raised-button type="submit">Login</button>
+
+            <div class="icons" style="margin-top: 10px; display: flex; justify-content: center; gap: 10px;">
+                <i><img src="../assets/facebook.png" width="30px" height="30px"></i>
+                <i><img src="../assets/google.png" width="30px" height="30px"></i>
+                <i><img src="../assets/linkedin.png" width="30px" height="30px"></i>
+              </div>
             <div class="register-and-forget-link">
                 <a (click)="goToRegisterComponent()">Creat New Account</a>
                 <a>Forget Password?</a>

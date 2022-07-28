@@ -1,33 +1,36 @@
 <div class="container">
     <mat-card>
         <mat-toolbar color="primary">Register</mat-toolbar>
-        <form action="">
-            <form class="login-form">
-                <mat-form-field>
-                    <mat-label>User Name</mat-label>
-                    <input matInput placeholder="Place Your Name">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="Place Your Email">
-                </mat-form-field>
 
-                <mat-form-field>
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password" placeholder="Place Your Correct Password">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Confirm Password</mat-label>
-                    <input matInput type="password" placeholder="Place Your Correct Password">
-                </mat-form-field>
-                <button mat-raised-button type="submit">Register</button>
-                <div class="register-and-forget-link">
-                    <a (click)="changeLoginFormValue()">Already Have an Account? Login</a>
-                  
-                </div>
+        <form class="login-form" [formGroup]="registrationForm" (ngSubmit)="registrationUserDtaCollect()" >
+            <mat-form-field>
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="Place Your Name" formControlName="userName"  (ngModelChange)="nameCheck($event)">
+            </mat-form-field>
+            <p *ngIf="isNameValid == false">User Name already Taken</p>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Place Your Email" formControlName="email">
+            </mat-form-field>
 
-            </form>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Place Your Correct Password" formControlName="password">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" placeholder="Place Your Correct Password"formControlName="confirmPassWord" 
+                (ngModelChange)="passwardMatching($event)">
+            </mat-form-field>
+            <p *ngIf="!isPassWordMatched">Password doesn't matched</p>
+            <button mat-raised-button type="submit">Register</button>
+            <div class="register-and-forget-link">
+                <a (click)="changeLoginFormValue()">Already Have an Account? Login</a>
+
+            </div>
 
         </form>
+
+
     </mat-card>
 </div>

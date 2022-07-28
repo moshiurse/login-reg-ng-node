@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-log-reg-parent',
@@ -7,18 +8,24 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class LogRegParentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginService: LoginServiceService) { }
   
   ngOnInit(): void {
+  
+  if(this.loginService.loginValue !== ''){
+      this.loginFormOpen = this.loginService.loginValue
   }
-
-  loginFormOpen = true;
-  registerFormOpen= false;
-  authenticUser: any;
-
-  changeLoginValue(data:any){
     
-    this.loginFormOpen = data;
+  }
+  
+  loginFormOpen = false;
+  registerFormOpen= true;
+  authenticUser: any;
+  
+  changeLoginValue(data1:any){
+    
+    this.loginFormOpen = data1;
+   
     this.registerFormOpen = false;
   }
   changeRegisterFormValue(data:any){
